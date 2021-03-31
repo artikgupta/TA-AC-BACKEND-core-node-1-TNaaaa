@@ -39,7 +39,7 @@ if (req.url.split(".").pop() === "css") {
   // set header for css file
   res.setHeader("Content-Type", "text/css");
   // read css file and send it in response
-  fs.readFile("./assets/stylesheets/" + req.url, (err, content) => {
+  fs.readFile("./assets/stylesheet/style.css" + req.url, (err, content) => {
     if (err) return console.log(err);
     res.end(content);
   });
@@ -50,24 +50,31 @@ if (req.url.split(".").pop() === "css") {
 
 - follow the steps for handling css
 
-if(req.url.split('.').pop() === 'images') {
-// set header for css file
-res.setHeader('Content-Type', 'text/css');
-// read css file and send it in response
-fs.readFile("./images/photo-1504714146340-959ca07e1f38.jpeg" + req.url, (err, content) => {
-if(err) return console.log(err);
-res.end(content)
-})
+```js
+if (req.url.split(".").pop() === "images") {
+  // set header for css file
+  res.setHeader("Content-Type", "text/css");
+  // read css file and send it in response
+  fs.readFile(
+    "./images/photo-1504714146340-959ca07e1f38.jpeg" + req.url,
+    (err, content) => {
+      if (err) return console.log(err);
+      res.end(content);
+    }
+  );
 }
+```
 
 4. handle request for javascripts(if any) in simialar fashion as above.
 
-if(req.url.split('.').pop() === 'js') {
-// set header for css file
-res.setHeader('Content-Type', 'text/css');
-// read css file and send it in response
-fs.readFile('./js/script.js' + req.url, (err, content) => {
-if(err) return console.log(err);
-res.end(content)
-})
+```js
+if (req.url.split(".").pop() === "js") {
+  // set header for css file
+  res.setHeader("Content-Type", "text/css");
+  // read css file and send it in response
+  fs.readFile("./js/script.js" + req.url, (err, content) => {
+    if (err) return console.log(err);
+    res.end(content);
+  });
 }
+```
